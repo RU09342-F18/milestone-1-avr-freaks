@@ -35,15 +35,19 @@ int main(void) {
 		    while ( !(UCSR0A & (1<<RXC0)) );
 		        character = UDR0;
 		    receivedchars[charcounter] = character;
+		    USART_Transmit(receivedchars[charcounter]);
 		    charcounter++;
         }while(character != 0x0D);
-        OCR0A = receivedchars[charcounter-2];
-        OCR0B = receivedchars[charcounter-3];
-        OCR2A = receivedchars[charcounter-4];
+        if(charcounter >= 5){
+        OCR0A = receivedchars[1];
+        OCR0B = receivedchars[2];
+        OCR2A = receivedchars[3];
         charcounter-=4;
+        }
         receivedchars[charcounter] = 0x0D;
-        receivedchars[0] = receivedchars[0]-1;
-        for(int i=0;i<charcounter;i++){
+        
+        USART_Transmit(receivedchars[0]-3);
+        for(int i=4;i<charcounter;i++){
         	USART_Transmit(receivedchars[i]);
         }
     }
