@@ -8,8 +8,8 @@
 #                customize the avrdude settings below first!
 
 # Microcontroller Type
-MCU = atmega328pb
-pMCU = m328pb
+MCU = atmega328p
+pMCU = m328p
 # MCU = attiny2313
 # MCU = atmega8
 # MCU = attiny45
