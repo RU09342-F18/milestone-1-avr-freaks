@@ -1,5 +1,5 @@
 ## UART RGB LED transceiver
 
-I will update documentation later this week, Thank you and have a nice day
+Please refer to the AppNote in the previous directory for instructions on how to use this node.
 
-73, N2EEE
+Thank you and have a nice day
